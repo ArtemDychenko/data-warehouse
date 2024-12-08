@@ -41,7 +41,7 @@ SELECT
 	[date].date_id as date_id,
 	START_PARKING_STATION.station_id as start_station_id,
 	END_PARKING_STATION.station_id as end_station_id,
-	car.car_id as car_id
+	car.car_id as car_id,
 FROM carSharingDB.dbo.rents AS RENTS
 	JOIN carSharingDB.dbo.parking_stations as START_PARKING_STATION_DB
 		ON RENTS.start_station_id = START_PARKING_STATION_DB.id

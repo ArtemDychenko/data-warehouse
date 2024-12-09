@@ -1,60 +1,73 @@
 -- Ładowanie danych z T2
 
-BULK INSERT car_types
-FROM 'C:\Users\artem\OneDrive\Documentos\HD_ETL_scripts\generated_data\car_types_T2.csv'
+DECLARE @path NVARCHAR(MAX) = 'C:\Users\Danylo\politechnika\semester_5\hd\data-warehouse\generated_data';
+DECLARE @sql NVARCHAR(MAX);
+
+-- BULK INSERT for car_types
+SET @sql = N'BULK INSERT car_types
+FROM ''' + @path + '\car_types_T2.csv''
 WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',  
-    FIRSTROW = 2            
-);
+    FIELDTERMINATOR = '','',  
+    ROWTERMINATOR = ''\n'',  
+    FIRSTROW = 2
+);';
+EXEC sp_executesql @sql;
 
-BULK INSERT cars
-FROM 'C:\Users\artem\OneDrive\Documentos\HD_ETL_scripts\generated_data\cars_T2.csv'
+-- BULK INSERT for cars
+SET @sql = N'BULK INSERT cars
+FROM ''' + @path + '\cars_T2.csv''
 WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',  
-    FIRSTROW = 2            
-);
+    FIELDTERMINATOR = '','',  
+    ROWTERMINATOR = ''\n'',  
+    FIRSTROW = 2
+);';
+EXEC sp_executesql @sql;
 
-BULK INSERT parking_stations
-FROM 'C:\Users\artem\OneDrive\Documentos\HD_ETL_scripts\generated_data\parking_station_T2.csv'
+-- BULK INSERT for parking_stations
+SET @sql = N'BULK INSERT parking_stations
+FROM ''' + @path + '\parking_station_T2.csv''
 WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',  
-    FIRSTROW = 2            
-);
+    FIELDTERMINATOR = '','',  
+    ROWTERMINATOR = ''\n'',  
+    FIRSTROW = 2
+);';
+EXEC sp_executesql @sql;
 
-BULK INSERT cars_on_station
-FROM 'C:\Users\artem\OneDrive\Documentos\HD_ETL_scripts\generated_data\car_on_station_T2.csv'
+-- BULK INSERT for cars_on_station
+SET @sql = N'BULK INSERT cars_on_station
+FROM ''' + @path + '\car_on_station_T2.csv''
 WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',  
-    FIRSTROW = 2            
-);
+    FIELDTERMINATOR = '','',  
+    ROWTERMINATOR = ''\n'',  
+    FIRSTROW = 2
+);';
+EXEC sp_executesql @sql;
 
-
-BULK INSERT users
-FROM 'C:\Users\artem\OneDrive\Documentos\HD_ETL_scripts\generated_data\users_T2.csv'
+-- BULK INSERT for users
+SET @sql = N'BULK INSERT users
+FROM ''' + @path + '\users_T2.csv''
 WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',  
-    FIRSTROW = 2            
-);
-
-BULK INSERT invoices
-FROM 'C:\Users\artem\OneDrive\Documentos\HD_ETL_scripts\generated_data\invoice_T2.csv'
+    FIELDTERMINATOR = '','',  
+    ROWTERMINATOR = ''\n'',  
+    FIRSTROW = 2
+);';
+EXEC sp_executesql @sql;
+-- BULK INSERT for invoices
+SET @sql = N'BULK INSERT invoices
+FROM ''' + @path + '\invoice_T2.csv''
 WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',  
-    FIRSTROW = 2            
-);
+    FIELDTERMINATOR = '','',  
+    ROWTERMINATOR = ''\n'',  
+    FIRSTROW = 2
+);';
+EXEC sp_executesql @sql;
 
-BULK INSERT rents
-FROM 'C:\Users\artem\OneDrive\Documentos\HD_ETL_scripts\generated_data\rents_T2.csv'
+-- BULK INSERT for rents
+SET @sql = N'BULK INSERT rents
+FROM ''' + @path + '\rents_T2.csv''
 WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',  
-    FIRSTROW = 2            
-);
-
-
+    FIELDTERMINATOR = '','',  
+    ROWTERMINATOR = ''\n'',  
+    FIRSTROW = 2
+);';
+EXEC sp_executesql @sql;
